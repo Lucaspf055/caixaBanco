@@ -48,7 +48,11 @@ public class CaixaBanco {
     }
 
 
-    public void deposita
+    public void deposita(Double valor) {
+        usuarios.get(usuarioLogado).setSaldo(usuarios.get(usuarioLogado).getSaldo() + valor);
+        System.out.println("Depósito realizado!");
+    }
+
     public void sacar(Double valor){
         if ((usuarios.get(usuarioLogado).getSaldo() - valor) < -600)
             System.out.printf("\nvoce utrapassou o seu limite");
@@ -58,13 +62,9 @@ public class CaixaBanco {
             System.out.printf("saldo atual: %.2f", usuarios.get(usuarioLogado).getSaldo());
         }
     }
-    public void registro(String cpf, String senha, String nome) {r(Double valor) {
-        usuarios.get(usuarioLogado).setSaldo(valor + usuarios.get(usuarioLogado).getSaldo());
-        System.out.printf("\nSaldo atual : %.2f", usuarios.get(usuarioLogado).getSaldo());
 
-    }
-
+    public void registra (String cpf, String nome, String senha){
         usuarios.add(new Usuario(00.00, cpf, senha, nome));
-        System.out.printf("Usuario %s foi adicionado", nome);
+        System.out.printf("usuario %s registrado com sucesso!", nome);
     }
 }
